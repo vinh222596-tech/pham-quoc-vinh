@@ -12,10 +12,9 @@
       --muted:#6b7280;
       --line:#e5e7eb;
       --card:#ffffff;
-      --primary:#2563eb;
-      --max:980px;
+      --link:#2563eb;
+      --max: 980px;
     }
-
     *{box-sizing:border-box}
     body{
       margin:0;
@@ -23,15 +22,14 @@
       background:var(--bg);
       color:var(--text);
     }
-
-    a{color:var(--primary);text-decoration:none}
+    a{color:var(--link);text-decoration:none}
     a:hover{text-decoration:underline}
 
-    /* ===== COVER ===== */
+    /* COVER */
     .cover{
-      height:240px;
+      height:220px;
       background:
-        linear-gradient(120deg, rgba(0,0,0,.6), rgba(0,0,0,.4)),
+        linear-gradient(120deg, rgba(0,0,0,.55), rgba(0,0,0,.35)),
         url("https://images.unsplash.com/photo-1522199755839-a2bacb67c546?auto=format&fit=crop&w=1600&q=60");
       background-size:cover;
       background-position:center;
@@ -41,120 +39,70 @@
       text-align:center;
       color:#fff;
     }
-
     .cover h1{margin:0;font-size:42px}
     .cover p{margin-top:10px;font-size:16px;opacity:.95}
 
-    /* ===== LAYOUT ===== */
+    /* LAYOUT */
     .wrap{
       max-width:var(--max);
       margin:0 auto;
-      padding:24px 16px;
+      padding:26px 16px;
     }
-
     .section{
       background:var(--card);
       border:1px solid var(--line);
-      border-radius:12px;
+      border-radius:10px;
       padding:18px 20px;
       margin-bottom:18px;
     }
-
     .section h2{
-      margin:0 0 12px;
-      font-size:15px;
+      margin:0 0 10px;
+      font-size:16px;
       text-transform:uppercase;
-      letter-spacing:.6px;
+      letter-spacing:.5px;
       display:flex;
       align-items:center;
       gap:8px;
     }
-
     .dot{
       width:8px;
       height:8px;
-      background:var(--primary);
+      background:#2563eb;
       border-radius:50%;
       display:inline-block;
     }
-
     .section p{
       margin:0 0 10px;
       color:var(--muted);
-      line-height:1.65;
+      line-height:1.6;
     }
 
-    /* ===== CONTACT ===== */
+    /* CONTACT */
     .contact ul{
       margin:0;
       padding-left:18px;
       color:var(--muted);
-      line-height:1.9;
+      line-height:1.8;
     }
     .contact li b{color:var(--text)}
 
-    /* ===== SKILLS ===== */
-    .skills p b{color:var(--text)}
-
-    /* ===== PROJECTS ===== */
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:14px;
-    }
-
-    @media(max-width:900px){
-      .grid{grid-template-columns:1fr}
-      .cover h1{font-size:34px}
-    }
-
-    .card{
-      border:1px solid var(--line);
-      border-radius:12px;
-      overflow:hidden;
-      background:#fff;
-    }
-
-    .thumb{
-      height:120px;
-      background:#eef2ff;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-size:13px;
-      color:#1f2937;
-    }
-
-    .card .body{
-      padding:12px;
-    }
-
-    .card .body a{
-      display:inline-block;
-      margin-bottom:6px;
-      font-weight:700;
-    }
-
-    .card .body p{
-      margin:0;
-      font-size:13px;
-      color:var(--muted);
-      line-height:1.5;
-    }
-
-    /* ===== FOOTER ===== */
+    /* FOOTER */
     .footer{
       text-align:center;
-      font-size:13px;
       color:var(--muted);
+      font-size:13px;
       padding:14px;
+    }
+
+    @media(max-width:768px){
+      .cover h1{font-size:34px}
     }
   </style>
 </head>
 
 <body>
 
-  <!-- COVER -->
+  <!-- HEADER -->
   <header class="cover">
     <div>
       <h1>Phạm Quốc Vinh</h1>
@@ -168,87 +116,78 @@
     <section class="section">
       <h2><span class="dot"></span>Giới thiệu</h2>
       <p>
-        Tôi là <b>Phạm Quốc Vinh</b>, sinh viên <b>Công nghệ Thông tin</b> tại Cần Thơ,
-        định hướng phát triển ở mảng <b>Frontend Developer</b>.
+        Tôi là <b>Phạm Quốc Vinh</b>, sinh viên ngành <b>Công nghệ Thông tin</b>,
+        định hướng phát triển theo mảng <b>Frontend</b>.
       </p>
       <p>
-        Tôi có khả năng xây dựng giao diện web <b>responsive, dễ sử dụng</b>,
-        chú trọng <b>trải nghiệm người dùng (UI/UX)</b>.
-        Hiện tôi đang tìm cơ hội <b>thực tập / fresher Frontend</b>
-        để tham gia các dự án thực tế và phát triển kỹ năng chuyên môn.
+        Tôi yêu thích xây dựng giao diện website trực quan, dễ sử dụng,
+        responsive và phù hợp mục tiêu kinh doanh.
       </p>
-    </section>
-
-    <!-- MỤC TIÊU -->
-    <section class="section">
-      <h2><span class="dot"></span>Mục tiêu nghề nghiệp</h2>
       <p>
-        Mong muốn được làm việc trong môi trường chuyên nghiệp để học hỏi,
-        nâng cao kỹ năng Frontend và từng bước tham gia xây dựng
-        các sản phẩm web phục vụ người dùng thực tế.
+        Hiện tôi mong muốn tìm cơ hội <b>thực tập Frontend</b> để học hỏi
+        quy trình làm việc thực tế và nâng cao kỹ năng chuyên môn.
       </p>
-    </section>
-
-    <!-- KỸ NĂNG -->
-    <section class="section skills">
-      <h2><span class="dot"></span>Kỹ năng nổi bật</h2>
-      <p><b>Frontend:</b> HTML, CSS, JavaScript; xây dựng giao diện web responsive.</p>
-      <p><b>UI/UX:</b> Hiểu bố cục, màu sắc; sử dụng Canva và Figma (cơ bản).</p>
-      <p><b>Triển khai website:</b> Đưa website lên GitHub Pages, tạo link và QR code.</p>
-      <p><b>Làm việc:</b> Chủ động học hỏi, tiếp thu nhanh, có trách nhiệm.</p>
-    </section>
-
-    <!-- DỰ ÁN -->
-    <section class="section">
-      <h2><span class="dot"></span>Dự án tiêu biểu</h2>
-
-      <div class="grid">
-        <div class="card">
-          <div class="thumb">Ảnh dự án</div>
-          <div class="body">
-            <a href="#" target="_blank">Website giới thiệu cá nhân</a>
-            <p>Thiết kế và xây dựng website 1 trang bằng HTML/CSS/JS,
-               triển khai bằng GitHub Pages.</p>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="thumb">Ảnh dự án</div>
-          <div class="body">
-            <a href="#" target="_blank">Google Forms – Bài kiểm tra</a>
-            <p>Tạo form trắc nghiệm, lấy link & QR code,
-               thống kê kết quả bằng biểu đồ.</p>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="thumb">Ảnh dự án</div>
-          <div class="body">
-            <a href="#" target="_blank">Landing page Bất động sản (demo)</a>
-            <p>Xây dựng landing page giới thiệu dự án,
-               bố cục rõ ràng, tối ưu mobile.</p>
-          </div>
-        </div>
-      </div>
     </section>
 
     <!-- LIÊN HỆ -->
     <section class="section contact">
-      <h2><span class="dot"></span>Liên hệ</h2>
+      <h2><span class="dot"></span>Thông tin liên hệ</h2>
       <ul>
-        <li><b>Email:</b> vinh222596@student.nctu.edu.vn</li>
-        <li><b>Điện thoại:</b> 0376 775 402</li>
+        <li><b>Họ tên:</b> Phạm Quốc Vinh</li>
+        <li><b>Chuyên ngành:</b> Công nghệ Thông tin</li>
         <li><b>Khu vực:</b> Tân An, Cần Thơ, Việt Nam</li>
+        <li><b>Email:</b>
+          <a href="mailto:vinh222596@student.nctu.edu.vn">
+            vinh222596@student.nctu.edu.vn
+          </a>
+        </li>
+        <li><b>Điện thoại:</b> 0376 775 402</li>
       </ul>
     </section>
 
+    <!-- KỸ NĂNG -->
+    <section class="section">
+      <h2><span class="dot"></span>Kỹ năng chính</h2>
+      <p><b>Frontend:</b> HTML, CSS, JavaScript; xây dựng giao diện web responsive.</p>
+      <p><b>UI/UX:</b> Biết sử dụng Canva, Figma (cơ bản) để thiết kế bố cục.</p>
+      <p><b>Công cụ:</b> Git, GitHub, triển khai website bằng GitHub Pages.</p>
+    </section>
+
+    <!-- NĂNG LỰC -->
+    <section class="section">
+      <h2><span class="dot"></span>Năng lực nổi bật</h2>
+      <p>
+        Có khả năng xây dựng website 1 trang hoặc nhiều trang với cấu trúc rõ ràng,
+        dễ mở rộng và dễ chỉnh sửa.
+      </p>
+      <p>
+        Chú trọng trải nghiệm người dùng, bố cục dễ nhìn,
+        nội dung rõ ràng và phù hợp mục đích sử dụng.
+      </p>
+      <p>
+        Có tinh thần tự học, chủ động tìm hiểu công nghệ mới
+        và hoàn thành công việc đúng yêu cầu.
+      </p>
+    </section>
+
+    <!-- QUY TRÌNH -->
+    <section class="section">
+      <h2><span class="dot"></span>Cách tôi học và làm việc</h2>
+      <p>• Phân tích yêu cầu → xác định bố cục và nội dung.</p>
+      <p>• Thiết kế giao diện đơn giản bằng Canva / Figma.</p>
+      <p>• Code HTML → CSS → JavaScript theo từng bước.</p>
+      <p>• Kiểm tra hiển thị trên máy tính và điện thoại.</p>
+      <p>• Đưa sản phẩm lên GitHub Pages để demo.</p>
+    </section>
+
     <div class="footer">
-      © <span id="year"></span> Phạm Quốc Vinh • Portfolio
+      © <span id="y"></span> Phạm Quốc Vinh • Frontend Portfolio
     </div>
+
   </main>
 
   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+    document.getElementById("y").textContent = new Date().getFullYear();
   </script>
 
 </body>
