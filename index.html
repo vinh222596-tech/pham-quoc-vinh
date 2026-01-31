@@ -4,6 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Phạm Quốc Vinh | Frontend Developer</title>
+
   <style>
     :root{
       --bg:#f6f7fb;
@@ -11,20 +12,26 @@
       --muted:#6b7280;
       --line:#e5e7eb;
       --card:#ffffff;
-      --link:#2563eb;
-      --max: 980px;
-      --accent:#1d4ed8;
+      --primary:#2563eb;
+      --max:980px;
     }
+
     *{box-sizing:border-box}
-    body{margin:0;font-family:Arial, Helvetica, sans-serif;background:var(--bg);color:var(--text)}
-    a{color:var(--link);text-decoration:none}
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      background:var(--bg);
+      color:var(--text);
+    }
+
+    a{color:var(--primary);text-decoration:none}
     a:hover{text-decoration:underline}
 
-    /* Cover */
+    /* ===== COVER ===== */
     .cover{
-      height: 240px;
+      height:240px;
       background:
-        linear-gradient(120deg, rgba(0,0,0,.60), rgba(0,0,0,.35)),
+        linear-gradient(120deg, rgba(0,0,0,.6), rgba(0,0,0,.4)),
         url("https://images.unsplash.com/photo-1522199755839-a2bacb67c546?auto=format&fit=crop&w=1600&q=60");
       background-size:cover;
       background-position:center;
@@ -33,31 +40,16 @@
       justify-content:center;
       text-align:center;
       color:#fff;
-      position:relative;
     }
-    .cover .tag{
-      display:inline-block;
-      margin-top:10px;
-      font-size:13px;
-      padding:6px 10px;
-      border:1px solid rgba(255,255,255,.35);
-      border-radius:999px;
-      background:rgba(0,0,0,.18);
-    }
-    .cover h1{margin:0;font-size:44px;letter-spacing:.3px}
-    .cover p{margin:10px 0 0;font-size:16px;opacity:.95}
 
-    /* Layout */
-    .wrap{max-width:var(--max);margin:0 auto;padding:24px 16px}
-    .row{
-      display:grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap:16px;
-      align-items:start;
-    }
-    @media(max-width:900px){
-      .row{grid-template-columns:1fr}
-      .cover h1{font-size:34px}
+    .cover h1{margin:0;font-size:42px}
+    .cover p{margin-top:10px;font-size:16px;opacity:.95}
+
+    /* ===== LAYOUT ===== */
+    .wrap{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:24px 16px;
     }
 
     .section{
@@ -65,279 +57,199 @@
       border:1px solid var(--line);
       border-radius:12px;
       padding:18px 20px;
-      margin-bottom:16px;
+      margin-bottom:18px;
     }
+
     .section h2{
       margin:0 0 12px;
-      font-size:14px;
-      letter-spacing:.6px;
+      font-size:15px;
       text-transform:uppercase;
+      letter-spacing:.6px;
       display:flex;
       align-items:center;
       gap:8px;
     }
+
     .dot{
-      width:8px;height:8px;border-radius:50%;
-      background:var(--accent);
+      width:8px;
+      height:8px;
+      background:var(--primary);
+      border-radius:50%;
       display:inline-block;
     }
-    .section p{margin:0 0 10px;color:var(--muted);line-height:1.65}
-    .hr{height:1px;background:var(--line); margin:12px 0}
 
-    /* Contact */
-    .contact ul{margin:0; padding-left:18px; color:var(--muted); line-height:1.9}
-    .contact li b{color:var(--text)}
-    .pill{
-      display:inline-block;
-      font-size:12px;
-      padding:4px 8px;
-      border-radius:999px;
-      border:1px solid var(--line);
+    .section p{
+      margin:0 0 10px;
       color:var(--muted);
-      margin-right:6px;
-      margin-top:6px;
+      line-height:1.65;
     }
 
-    /* Skills bars */
-    .skill{margin:12px 0}
-    .skill .top{display:flex; justify-content:space-between; gap:10px; font-size:13px}
-    .skill .top b{color:var(--text)}
-    .bar{
-      margin-top:6px;
-      height:10px;
-      background:#eef2ff;
-      border:1px solid var(--line);
-      border-radius:999px;
-      overflow:hidden;
+    /* ===== CONTACT ===== */
+    .contact ul{
+      margin:0;
+      padding-left:18px;
+      color:var(--muted);
+      line-height:1.9;
     }
-    .fill{height:100%; background:linear-gradient(90deg, #2563eb, #60a5fa); border-radius:999px}
+    .contact li b{color:var(--text)}
 
-    /* Timeline blocks */
-    .item{margin:12px 0}
-    .item .title{font-weight:700; color:var(--text)}
-    .item .meta{color:var(--muted); font-size:13px; margin-top:4px}
-    .item ul{margin:8px 0 0; padding-left:18px; color:var(--muted); line-height:1.65}
-    .item ul li{margin:4px 0}
+    /* ===== SKILLS ===== */
+    .skills p b{color:var(--text)}
 
-    /* Projects cards */
+    /* ===== PROJECTS ===== */
     .grid{
       display:grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns:repeat(3,1fr);
       gap:14px;
     }
-    @media(max-width:900px){ .grid{grid-template-columns:1fr} }
+
+    @media(max-width:900px){
+      .grid{grid-template-columns:1fr}
+      .cover h1{font-size:34px}
+    }
+
     .card{
       border:1px solid var(--line);
       border-radius:12px;
       overflow:hidden;
       background:#fff;
     }
+
     .thumb{
       height:120px;
       background:#eef2ff;
       display:flex;
       align-items:center;
       justify-content:center;
-      color:#1f2937;
       font-size:13px;
+      color:#1f2937;
     }
-    .card .body{padding:12px}
-    .card .body a{display:inline-block; margin:6px 0; font-weight:800}
-    .card .body p{margin:0;color:var(--muted);font-size:13px;line-height:1.5}
 
-    /* Footer */
-    .footer{color:var(--muted); font-size:13px; text-align:center; padding:14px}
-    .note{font-size:12px;color:var(--muted);margin:0}
+    .card .body{
+      padding:12px;
+    }
+
+    .card .body a{
+      display:inline-block;
+      margin-bottom:6px;
+      font-weight:700;
+    }
+
+    .card .body p{
+      margin:0;
+      font-size:13px;
+      color:var(--muted);
+      line-height:1.5;
+    }
+
+    /* ===== FOOTER ===== */
+    .footer{
+      text-align:center;
+      font-size:13px;
+      color:var(--muted);
+      padding:14px;
+    }
   </style>
 </head>
 
 <body>
+
   <!-- COVER -->
   <header class="cover">
     <div>
       <h1>Phạm Quốc Vinh</h1>
-      <p>Lập trình viên Frontend</p>
-      <div class="tag">Thực tập / Fresher • HTML • CSS • JavaScript</div>
+      <p>Frontend Developer</p>
     </div>
   </header>
 
   <main class="wrap">
 
-    <!-- TOP: GIỚI THIỆU + LIÊN HỆ -->
-    <div class="row">
-      <!-- LEFT -->
-      <div>
-        <section class="section">
-          <h2><span class="dot"></span>Giới thiệu</h2>
-          <p>
-            Tôi là <b>Phạm Quốc Vinh</b>, sinh viên ngành <b>Công nghệ Thông tin</b> (Cần Thơ),
-            định hướng phát triển ở mảng <b>Frontend</b>. Tôi thích xây dựng giao diện web trực quan,
-            dễ dùng, responsive và tối ưu trải nghiệm người dùng.
-          </p>
-          <p>
-            Tôi đang tìm vị trí <b>thực tập Frontend</b> để học quy trình làm việc thực tế,
-            rèn luyện kỹ năng UI/UX và tham gia phát triển sản phẩm web.
-          </p>
-          <div class="hr"></div>
-          <p class="note">
-            (Gợi ý: bạn có thể thêm link GitHub/Portfolio khi có dự án đầy đủ.)
-          </p>
-        </section>
-
-        <section class="section">
-          <h2><span class="dot"></span>Mục tiêu nghề nghiệp</h2>
-          <p><b>Ngắn hạn:</b> Thực tập trong môi trường chuyên nghiệp, nâng cao HTML/CSS/JS, làm quen teamwork và quy trình phát triển sản phẩm.</p>
-          <p><b>Dài hạn:</b> Trở thành Frontend Developer vững kỹ năng, làm tốt UI/UX, performance và đóng góp cho sản phẩm thực tế.</p>
-        </section>
-
-        <section class="section">
-          <h2><span class="dot"></span>Học vấn</h2>
-
-          <div class="item">
-            <div class="title">Đại học Nam Cần Thơ (NCTU)</div>
-            <div class="meta">Chuyên ngành: Công nghệ Thông tin • (Bạn điền năm học tại đây)</div>
-          </div>
-
-          <div class="item">
-            <div class="title">THPT Nguyễn Du</div>
-            <div class="meta">(Bạn điền năm học tại đây)</div>
-          </div>
-        </section>
-
-        <section class="section">
-          <h2><span class="dot"></span>Kinh nghiệm / Thực hành</h2>
-
-          <!-- Nếu bạn thật sự có kinh nghiệm công ty, giữ; nếu không, đổi thành “Dự án cá nhân” -->
-          <div class="item">
-            <div class="title">Dự án Web/App (Frontend)</div>
-            <div class="meta">Thực hành cá nhân / học tập</div>
-            <ul>
-              <li>Xây dựng giao diện web bằng <b>HTML, CSS, JavaScript</b> theo hướng responsive.</li>
-              <li>Làm quen <b>ReactJS</b> (cơ bản) và tích hợp API đơn giản.</li>
-              <li>Tối ưu bố cục, trải nghiệm người dùng (UI/UX) và kiểm thử cơ bản.</li>
-            </ul>
-          </div>
-
-          <p class="note">
-            Nếu CV bạn có “Công ty Đất Xanh Miền Tây / X PERC LTD”, bạn có thể thay khối trên bằng đúng tên công ty + thời gian.
-          </p>
-        </section>
-
-      </div>
-
-      <!-- RIGHT -->
-      <div>
-        <section class="section contact">
-          <h2><span class="dot"></span>Thông tin liên hệ</h2>
-          <ul>
-            <li><b>Họ tên:</b> Phạm Quốc Vinh</li>
-            <li><b>Giới tính:</b> Nam</li>
-            <li><b>Ngày sinh:</b> 02/01/2004</li>
-            <li><b>Khu vực:</b> Tân An, Cần Thơ, Việt Nam</li>
-            <li><b>Địa chỉ:</b> 278 Tầm Vu (tạm trú)</li>
-            <li><b>Email:</b> <a href="mailto:vinh222596@student.nctu.edu.vn">vinh222596@student.nctu.edu.vn</a></li>
-            <li><b>Điện thoại:</b> 0376 775 402</li>
-          </ul>
-
-          <div class="hr"></div>
-          <span class="pill">Frontend</span>
-          <span class="pill">UI/UX cơ bản</span>
-          <span class="pill">GitHub Pages</span>
-          <!-- Mở comment nếu có GitHub -->
-          <!-- <span class="pill"><a href="https://github.com/your-username" target="_blank">GitHub</a></span> -->
-        </section>
-
-        <section class="section">
-          <h2><span class="dot"></span>Kỹ năng</h2>
-
-          <div class="skill">
-            <div class="top"><b>Tin học văn phòng</b><span>Khá</span></div>
-            <div class="bar"><div class="fill" style="width:75%"></div></div>
-          </div>
-
-          <div class="skill">
-            <div class="top"><b>Tiếng Anh giao tiếp</b><span>Cơ bản</span></div>
-            <div class="bar"><div class="fill" style="width:55%"></div></div>
-          </div>
-
-          <div class="skill">
-            <div class="top"><b>Frontend (HTML/CSS/JS)</b><span>Khá</span></div>
-            <div class="bar"><div class="fill" style="width:78%"></div></div>
-          </div>
-
-          <div class="skill">
-            <div class="top"><b>Tư duy logic & sáng tạo</b><span>Khá</span></div>
-            <div class="bar"><div class="fill" style="width:72%"></div></div>
-          </div>
-
-          <div class="hr"></div>
-          <p class="note">Bạn có thể chỉnh % cho đúng năng lực thật của mình.</p>
-        </section>
-
-        <section class="section">
-          <h2><span class="dot"></span>Sở thích</h2>
-          <p style="margin:0;color:var(--muted);line-height:1.8">
-            • Trồng cây xanh<br/>
-            • Thể thao<br/>
-            • Câu cá
-          </p>
-        </section>
-
-        <section class="section">
-          <h2><span class="dot"></span>Chứng chỉ</h2>
-          <p style="margin:0;color:var(--muted);line-height:1.8">
-            • Chứng chỉ Tin học văn phòng<br/>
-            • Chứng chỉ Kỹ năng mềm<br/>
-            • Chứng chỉ kỹ năng lập trình (nếu có)<br/>
-            • Tiếng Anh B1 (nếu có)
-          </p>
-        </section>
-      </div>
-    </div>
-
-    <!-- PROJECTS -->
-    <section class="section projects">
-      <h2><span class="dot"></span>Dự án nổi bật</h2>
-
-      <div class="grid">
-        <div class="card">
-          <div class="thumb">Ảnh dự án (thay sau)</div>
-          <div class="body">
-            <a href="#" target="_blank">Trang web giới thiệu bản thân</a>
-            <p>Website 1 trang: giới thiệu, liên hệ, kỹ năng, dự án. Deploy bằng GitHub Pages.</p>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="thumb">Ảnh dự án (thay sau)</div>
-          <div class="body">
-            <a href="#" target="_blank">Google Forms – Kiểm tra giữa kỳ</a>
-            <p>Tạo form trắc nghiệm, lấy link + QR code, thống kê biểu đồ (pie/bar).</p>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="thumb">Ảnh dự án (thay sau)</div>
-          <div class="body">
-            <a href="#" target="_blank">Landing page Bất động sản (demo)</a>
-            <p>Trang giới thiệu dự án: bố cục rõ, CTA, tối ưu hiển thị mobile.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="hr"></div>
-      <p class="note">
-        * Thay link “#” bằng link demo thật (GitHub Pages) khi bạn upload dự án/ảnh chụp.
+    <!-- GIỚI THIỆU -->
+    <section class="section">
+      <h2><span class="dot"></span>Giới thiệu</h2>
+      <p>
+        Tôi là <b>Phạm Quốc Vinh</b>, sinh viên <b>Công nghệ Thông tin</b> tại Cần Thơ,
+        định hướng phát triển ở mảng <b>Frontend Developer</b>.
+      </p>
+      <p>
+        Tôi có khả năng xây dựng giao diện web <b>responsive, dễ sử dụng</b>,
+        chú trọng <b>trải nghiệm người dùng (UI/UX)</b>.
+        Hiện tôi đang tìm cơ hội <b>thực tập / fresher Frontend</b>
+        để tham gia các dự án thực tế và phát triển kỹ năng chuyên môn.
       </p>
     </section>
 
+    <!-- MỤC TIÊU -->
+    <section class="section">
+      <h2><span class="dot"></span>Mục tiêu nghề nghiệp</h2>
+      <p>
+        Mong muốn được làm việc trong môi trường chuyên nghiệp để học hỏi,
+        nâng cao kỹ năng Frontend và từng bước tham gia xây dựng
+        các sản phẩm web phục vụ người dùng thực tế.
+      </p>
+    </section>
+
+    <!-- KỸ NĂNG -->
+    <section class="section skills">
+      <h2><span class="dot"></span>Kỹ năng nổi bật</h2>
+      <p><b>Frontend:</b> HTML, CSS, JavaScript; xây dựng giao diện web responsive.</p>
+      <p><b>UI/UX:</b> Hiểu bố cục, màu sắc; sử dụng Canva và Figma (cơ bản).</p>
+      <p><b>Triển khai website:</b> Đưa website lên GitHub Pages, tạo link và QR code.</p>
+      <p><b>Làm việc:</b> Chủ động học hỏi, tiếp thu nhanh, có trách nhiệm.</p>
+    </section>
+
+    <!-- DỰ ÁN -->
+    <section class="section">
+      <h2><span class="dot"></span>Dự án tiêu biểu</h2>
+
+      <div class="grid">
+        <div class="card">
+          <div class="thumb">Ảnh dự án</div>
+          <div class="body">
+            <a href="#" target="_blank">Website giới thiệu cá nhân</a>
+            <p>Thiết kế và xây dựng website 1 trang bằng HTML/CSS/JS,
+               triển khai bằng GitHub Pages.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="thumb">Ảnh dự án</div>
+          <div class="body">
+            <a href="#" target="_blank">Google Forms – Bài kiểm tra</a>
+            <p>Tạo form trắc nghiệm, lấy link & QR code,
+               thống kê kết quả bằng biểu đồ.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="thumb">Ảnh dự án</div>
+          <div class="body">
+            <a href="#" target="_blank">Landing page Bất động sản (demo)</a>
+            <p>Xây dựng landing page giới thiệu dự án,
+               bố cục rõ ràng, tối ưu mobile.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LIÊN HỆ -->
+    <section class="section contact">
+      <h2><span class="dot"></span>Liên hệ</h2>
+      <ul>
+        <li><b>Email:</b> vinh222596@student.nctu.edu.vn</li>
+        <li><b>Điện thoại:</b> 0376 775 402</li>
+        <li><b>Khu vực:</b> Tân An, Cần Thơ, Việt Nam</li>
+      </ul>
+    </section>
+
     <div class="footer">
-      © <span id="y"></span> Phạm Quốc Vinh • Portfolio
+      © <span id="year"></span> Phạm Quốc Vinh • Portfolio
     </div>
   </main>
 
   <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
+
 </body>
 </html>
